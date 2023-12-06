@@ -1,9 +1,30 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Página de Inicio - Gestión de Pacientes</title>
     <style>
+    .btn {
+            background-color: #50b3a2; /* Color de fondo para tus botones */
+            color: white; /* Color del texto */
+            padding: 10px 20px; /* Espaciado dentro del botón */
+            text-decoration: none; /* Elimina el subrayado del enlace */
+            text-transform: uppercase; /* Texto en mayúsculas */
+            border: none; /* Sin bordes */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño del texto */
+            transition: background-color 0.3s; /* Transición suave para el hover */
+        }
+
+        .btn:hover {
+            background-color: #3a8e7a; /* Color de fondo al pasar el cursor */
+            cursor: pointer; /* Cambia el cursor a una mano */
+        }
+
+        .btn-group {
+            display: flex; /* Dispone los botones en línea */
+            justify-content: center; /* Centra los botones */
+            padding: 20px; /* Espaciado alrededor del grupo de botones */
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -15,6 +36,14 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+        }
+
+        .invisible-link {
+        color: #50b3a2; /* Color igual al de la barra de navegación */
+        }
+
+        .invisible-link:hover {
+        color: #50b3a2; /* O cualquier otro color para el hover */
         }
 
         header {
@@ -84,26 +113,14 @@
             <div id="branding">
                 <h1><span class="highlight">Rasi</span> Medical</h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="{% url 'lista_pacientes' %}">Listar Pacientes</a></li>
-                    <li><a href="{% url 'crear_paciente' %}">Crear Paciente</a></li>
-                    <li><a href="{% url 'lista_historias_clinicas' %}">Listar Historias Clínicas</a></li>
-                    <li><a href="{% url 'crear_historia_clinica' %}">Crear Historia Clínica</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <h2>Consultar Historia Clínica</h2>
-        <form action="{% url 'buscar_historia_clinica' %}" method="get">
-            <label for="id_historia">ID de Historia Clínica:</label>
-            <input type="text" id="id_historia" name="id" required>
-            <button type="submit">Buscar</button>
-        </form>        
-    </div>
-
+    <div class="btn-group">
+        <a href="http://34.67.51.85:8080" class="btn">Historias Clínicas</a>
+        <a href="http://35.238.46.228:8080" class="btn">Adendas</a>
+        <a href="http://35.223.179.9:8080" class="btn">Pacientes</a>
+    </div>    
     <!-- Aquí puedes añadir más contenido o secciones a tu página de inicio si lo deseas -->
 
 </body>
